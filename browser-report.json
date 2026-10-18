@@ -1,0 +1,76 @@
+{
+  "widths": [
+    {
+      "width": 1440,
+      "client": 1425,
+      "scroll": 1425,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "width": 1024,
+      "client": 1009,
+      "scroll": 1009,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "width": 768,
+      "client": 753,
+      "scroll": 753,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "width": 375,
+      "client": 375,
+      "scroll": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "width": 390,
+      "client": 390,
+      "scroll": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "width": 414,
+      "client": 414,
+      "scroll": 414,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "width": 430,
+      "client": 430,
+      "scroll": 430,
+      "broken": [],
+      "overflow": []
+    }
+  ],
+  "checks": [
+    {
+      "intro": {
+        "audit": {
+          "seen": true,
+          "addedAt": 833.3999999761581,
+          "removedAt": 1784.699999988079
+        },
+        "stored": "1",
+        "visible": "none"
+      }
+    },
+    "Intro does not repeat in the same session",
+    "Desktop scroll changes camera transform and editorial movement",
+    "Gallery collection, keyboard wrap, Home, swipe, focus containment, rapid navigation, Escape and focus restoration",
+    "Category keyboard navigation, filtered photos, single-photo controls",
+    "Mobile menu anchor navigation and scroll unlock",
+    "Carousel arrows and end boundaries",
+    "Contact form prepares a correctly encoded WhatsApp message",
+    "Final and floating WhatsApp links, vector icons, touch sizes and safe spacing",
+    "Reduced motion suppresses intro and motion"
+  ],
+  "errors": []
+}

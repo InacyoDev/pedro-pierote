@@ -2,7 +2,7 @@ import {readFileSync,writeFileSync} from 'node:fs';
 import {Script} from 'node:vm';
 const data=readFileSync('dist/data.js','utf8').replaceAll('export ','');
 const components=readFileSync('dist/components.js','utf8').replace(/^import .*;\r?\n/,'').replaceAll('export ','');
-const names=['Header','Hero','Manifesto','PortfolioGallery','HorizontalGallery','BehindTheScenes','CategoriesExperience','FilmStrip','About','MobileFilmmaking','ContactCTA','Footer','Lightbox','ContactModal'];
+const names=['icon','FloatingWhatsApp','Header','Hero','Manifesto','PortfolioGallery','HorizontalGallery','BehindTheScenes','CategoriesExperience','FilmStrip','About','MobileFilmmaking','ContactCTA','Footer','Lightbox','ContactModal'];
 const app=readFileSync('dist/app.js','utf8').replace(/^import .*;\r?\n/gm,'');
 const script=`${data}\n${components}\nconst C={${names.join(',')}};\n${app}`;
 new Script(script);

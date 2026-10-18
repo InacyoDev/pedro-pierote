@@ -1,5 +1,9 @@
-// Add a real number in international format, digits only, when authorized.
-export const contactConfig = { whatsapp: '', instagram: 'https://www.instagram.com/p.pierote_/', handle: '@p.pierote_' };
+export const contactConfig = {
+ whatsapp: '5573981839889',
+ message: 'Olá, Pedro! Vi seu portfólio e gostaria de conversar sobre um projeto audiovisual.',
+ instagram: 'https://www.instagram.com/p.pierote_/', handle: '@p.pierote_'
+};
+export const whatsappUrl = (message=contactConfig.message)=>`https://wa.me/${contactConfig.whatsapp}?text=${encodeURIComponent(message)}`;
 const entries = [
  [0,700,894,'Bastidores','Pedro com câmera e flash nos bastidores'],
  [1,695,860,'Conteúdo','Câmera profissional, smartphone e equipamentos de produção'],

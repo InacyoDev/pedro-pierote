@@ -1,0 +1,28 @@
+{
+  "widths": [],
+  "checks": [
+    {
+      "intro": {
+        "audit": {
+          "seen": true,
+          "addedAt": 639.4000000059605,
+          "removedAt": 1590.4000000059605
+        },
+        "stored": "1",
+        "visible": "none"
+      }
+    },
+    "Intro does not repeat in the same session",
+    "Desktop scroll changes camera transform and editorial movement",
+    "Preview cursor, hover zoom, category crossfade and magnetic CTA",
+    "Gallery collection, keyboard wrap, Home, swipe, focus containment, rapid navigation, Escape and focus restoration",
+    "Category keyboard navigation, filtered photos, single-photo controls",
+    "Mobile menu anchor navigation and scroll unlock",
+    "Carousel arrows and end boundaries",
+    "Contact form prepares a correctly encoded WhatsApp message",
+    "Final and floating WhatsApp links, vector icons, touch sizes and safe spacing",
+    "Reduced motion suppresses intro and motion",
+    "Portable HTML opens from disk with working SVGs, WhatsApp and lightbox"
+  ],
+  "errors": []
+}
