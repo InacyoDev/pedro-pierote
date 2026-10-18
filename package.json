@@ -1,0 +1,11 @@
+{
+  "name": "pedro-pierote-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "check": "node --check dist/app.js && node --check dist/components.js && node --check dist/data.js",
+    "test": "node --test --test-isolation=none validate.test.mjs",
+    "build": "npm run check && npm test && node make-portable.mjs"
+  }
+}

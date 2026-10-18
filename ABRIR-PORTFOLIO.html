@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<base href="./dist/">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <title>Pedro Pierote | Filmmaker & Fotógrafo</title>
+  <meta name="description" content="Vídeos e fotografias com impacto, estratégia e identidade. Conheça o olhar de Pedro Pierote sobre shows, eventos e bastidores.">
+  <meta property="og:title" content="Pedro Pierote | Imagens que fazem sentir">
+  <meta property="og:description" content="Filmmaking mobile e fotografia. Shows, eventos e o que acontece por trás das imagens.">
+  <meta property="og:type" content="website"><meta property="og:image" content="https://pedro-pierote-portfolio.vocal-cabin-1973.chatgpt.site/images/07.webp">
+  <link rel="canonical" href="https://pedro-pierote-portfolio.vocal-cabin-1973.chatgpt.site/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="images/07.webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module">// Add a real number in international format, digits only, when authorized.
+const contactConfig = { whatsapp: '', instagram: 'https://www.instagram.com/p.pierote/', handle: '@p.pierote' };
+const entries = [
+ [0,700,894,'Bastidores','Pedro com câmera e flash nos bastidores'],
+ [1,695,860,'Conteúdo','Câmera profissional, smartphone e equipamentos de produção'],
+ [2,654,848,'Bastidores','Pedro apresenta a câmera durante uma cobertura'],
+ [3,693,853,'Shows','Cantor com microfone sob luz azul'],
+ [4,688,832,'Shows','Artista de preto diante de luzes vermelhas no palco'],
+ [5,647,865,'Shows','Cantor de camisa azul cumprimenta o público'],
+ [6,686,844,'Shows','Cantor com microfone branco e luzes azuis ao fundo'],
+ [7,647,903,'Shows','Artista no palco entre efeitos de fogo e luz laranja'],
+ [8,668,849,'Shows','Retrato de cantor com camisa preta durante apresentação'],
+ [9,657,856,'Shows','Cantor com camisa verde em apresentação ao vivo'],
+ [10,632,855,'Eventos','Visão do palco com músicos e iluminação azul'],
+ [11,710,577,'Conteúdo','Pedro registra um evento com smartphone'],
+ [12,427,579,'Bastidores','Pedro com equipamentos durante cobertura de evento'],
+ [13,456,586,'Bastidores','Pedro sorrindo nos bastidores de um evento'],
+ [14,649,814,'Conteúdo','Pedro concentra o olhar no smartphone durante uma gravação'],
+ [15,659,844,'Bastidores','Pedro junto ao público sob iluminação vermelha'],
+ [16,464,836,'Shows','Artista de camisa clara no palco iluminado'],
+ [17,471,802,'Shows','Cantor em apresentação sob luz magenta'],
+ [18,492,688,'Fotografia','Cavaleiro e cavalo em movimento na pista de areia'],
+ [19,496,620,'Fotografia','Registro externo de cavaleiro levantando areia na pista']
+];
+const portfolioData = entries.map(([id,width,height,category,alt])=>({id,image:`images/${String(id).padStart(2,'0')}.webp`,thumbnail:`images/${String(id).padStart(2,'0')}-small.webp`,thumbnailWidth:id===16?344:id===17?364:420,width,height,category,alt,objectPosition:'50% 50%',aspectRatio:width/height,orientation:width>height?'landscape':'portrait'}));
+const getPhoto = id => portfolioData.find(item=>item.id===id);
+
+const photo = (id,{className='',eager=false,sizes='(max-width: 700px) 100vw, 50vw',objectPosition=null}={}) => {const p=getPhoto(id);return `<img class="${className}" style="--photo-position:${objectPosition||p.objectPosition}" src="${p.image}" ${eager?'':`srcset="${p.thumbnail} ${p.thumbnailWidth}w, ${p.image} ${p.width}w" sizes="${sizes}"`} width="${p.width}" height="${p.height}" alt="${p.alt}" loading="${eager?'eager':'lazy'}" ${eager?'fetchpriority="high"':''} decoding="async">`;};
+const cta = (label='Solicitar orçamento',cls='')=>`<button class="cta ${cls}" data-contact>${label}<span aria-hidden="true">↗</span></button>`;
+const Header = ()=>`<header id="header"><a class="wordmark" href="#inicio" aria-label="Pedro Pierote, início">PP<span>.</span></a><nav class="desktop-nav" aria-label="Navegação principal"><a href="#trabalhos">Trabalhos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>${cta('Fale comigo','header-cta')}<button class="menu-toggle" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false"><span></span><span></span></button></header><dialog id="mobile-menu" aria-label="Menu principal"><button class="close" data-close aria-label="Fechar menu">×</button><nav><a href="#trabalhos">Trabalhos ↗</a><a href="#sobre">Sobre ↗</a><a href="#contato">Contato ↗</a></nav><p>PEDRO PIEROTE<br>Filmmaker · Fotógrafo</p></dialog>`;
+const Hero = ()=>`<section class="hero" id="inicio"><div class="hero-media">${photo(7,{eager:true,objectPosition:'50% 42%'})}</div><div class="hero-shade"></div><div class="hero-copy"><p class="eyebrow">Filmmaker & fotógrafo</p><h1><span>IMAGENS QUE</span><span>FAZEM VOCÊ</span><span class="outline">SENTIR O MOMENTO.</span></h1><div class="hero-bottom"><p>Vídeos e fotografias com impacto,<br>estratégia e identidade.</p><div class="hero-actions"><a class="cta solid" href="#trabalhos">Ver trabalhos <span aria-hidden="true">↓</span></a>${cta()}</div></div></div><a class="scroll-cue" href="#manifesto" aria-label="Continuar para o manifesto">↓</a><span class="hero-credit">PEDRO PIEROTE / AUDIOVISUAL</span></section>`;
+const Manifesto = ()=>`<section class="manifesto section" id="manifesto"><p class="eyebrow reveal">Imagem é mais que registro.</p><h2 class="reveal">É sobre fazer<br>o momento continuar<br><span>vivo depois que acaba.</span></h2><p class="manifesto-note reveal">Crio vídeos e fotos com impacto e estratégia.<br>Audiovisual que gera valor de verdade.</p></section>`;
+const PortfolioItem = (id,cls='')=>`<figure class="portfolio-item ${cls} reveal"><button class="photo-button" data-photo="${id}" aria-label="Ampliar: ${getPhoto(id).alt}">${photo(id)}<span class="image-open" aria-hidden="true">↗</span></button><figcaption><span>${getPhoto(id).category}</span><span>Fotografia</span></figcaption></figure>`;
+const PortfolioGallery = ()=>`<section class="section portfolio" id="trabalhos"><div class="section-heading reveal"><h2>TRABALHOS<br><span class="outline">SELECIONADOS</span></h2><p>Um instante. Outras formas de sentir.</p></div><div class="editorial-grid">${PortfolioItem(4,'work-a')}${PortfolioItem(3,'work-b')}${PortfolioItem(6,'work-c')}${PortfolioItem(8,'work-d')}${PortfolioItem(18,'work-e')}${PortfolioItem(19,'work-f')}</div></section>`;
+const HorizontalGallery = ()=>`<section class="stage" id="palco"><div class="stage-sticky"><div class="stage-heading"><p class="eyebrow">No palco</p><h2>ENERGIA EM<br>CADA FRAME.</h2><div class="stage-controls"><button data-stage="-1" aria-label="Fotografia anterior do palco">←</button><button data-stage="1" aria-label="Próxima fotografia do palco">→</button></div></div><div class="stage-window" tabindex="0" role="region" aria-label="Galeria de shows. Use as setas ou deslize para navegar."><div class="stage-track">${[5,7,9,10,16,17].map(id=>`<button class="stage-photo photo-button" data-photo="${id}" aria-label="Ampliar: ${getPhoto(id).alt}">${photo(id)}</button>`).join('')}</div></div></div></section>`;
+const BehindTheScenes = ()=>`<section class="section backstage"><div class="backstage-title reveal"><p class="eyebrow">Por trás das imagens</p><h2>OLHAR.<br>TEMPO.<br>PRESENÇA.</h2></div><div class="backstage-main reveal">${photo(0)}</div><div class="backstage-detail reveal">${photo(2)}</div><p class="backstage-copy reveal">Cada evento acontece uma vez.<br>O trabalho é estar no lugar certo,<br>no instante certo,<br>e transformar aquilo em imagem.</p></section>`;
+const CategoriesExperience = ()=>`<section class="categories" aria-labelledby="categories-title"><div class="category-images">${[4,10,11,18].map((id,i)=>photo(id,{className:`category-image ${i===0?'active':''}`,sizes:'100vw',objectPosition:'50% 36%'})).join('')}</div><div class="category-shade"></div><div class="category-content"><h2 id="categories-title">O que você quer registrar?</h2><div class="category-options">${['Shows','Eventos','Conteúdo','Fotografia'].map((x,i)=>`<button data-category="${i}" aria-pressed="${i===0}" class="${i===0?'active':''}">${x}<span aria-hidden="true">↗</span></button>`).join('')}</div><button class="category-explore cta" data-explore>Explorar imagens <span aria-hidden="true">↗</span></button></div></section>`;
+const FilmStrip = ()=>`<div class="filmstrip"><div class="marquee" aria-hidden="true">${Array(2).fill('<span>CAPTURE.</span><span class="outline">CREATE.</span><span>FEEL.</span><span class="outline">REMEMBER.</span>').join('')}</div><span class="sr-only">Capture. Create. Feel. Remember.</span><button class="motion-toggle" aria-pressed="false">Pausar movimento</button></div>`;
+const About = ()=>`<section class="section about" id="sobre"><div class="about-photo reveal">${photo(13)}</div><div class="about-copy reveal"><p class="eyebrow">Sobre Pedro</p><h2>A câmera é a ferramenta.<br><span>O olhar é o diferencial.</span></h2><p>Pedro Pierote atua com filmmaking mobile e fotografia, produzindo conteúdos visuais focados em impacto, estratégia e qualidade.</p><p>Seu trabalho registra momentos, pessoas e eventos buscando transformar cada cena em uma imagem que continue comunicando mesmo depois que o momento passou.</p><a class="text-link" href="${contactConfig.instagram}" target="_blank" rel="noopener noreferrer">${contactConfig.handle} <span aria-hidden="true">↗</span></a></div></section>`;
+const MobileFilmmaking = ()=>`<section class="section mobile-film"><div class="mobile-film-copy reveal"><p class="eyebrow">Mobile filmmaking</p><h2>A melhor câmera<br>é a que sabe contar<br><span>a história.</span></h2><p>Agilidade no registro.<br>Intenção em cada imagem.</p></div><div class="mobile-film-images"><div class="phone-shot reveal">${photo(14)}</div><div class="phone-detail reveal">${photo(11)}</div></div></section>`;
+const ContactCTA = ()=>`<section class="section contact" id="contato"><div class="contact-photo">${photo(15)}</div><div class="contact-copy reveal"><p class="eyebrow">Seu próximo projeto começa aqui</p><h2>TEM UM PROJETO<br><span class="outline">EM MENTE?</span></h2><p>Vamos transformar sua ideia,<br>evento ou momento em imagem.</p>${cta('Vamos conversar','solid large')}<a class="instagram" href="${contactConfig.instagram}" target="_blank" rel="noopener noreferrer">Instagram / ${contactConfig.handle} ↗</a></div></section>`;
+const Footer = ()=>`<footer><a href="#inicio" class="wordmark">PP.</a><p>Pedro Pierote<br><span>Filmmaker · Fotógrafo</span></p><span>© ${new Date().getFullYear()} Pedro Pierote</span><a href="#inicio">Voltar ao topo ↑</a></footer>`;
+const Lightbox = ()=>`<dialog id="lightbox" aria-label="Galeria de fotografias"><button class="close" data-close aria-label="Fechar fotografia">×</button><div class="lightbox-top"><span>PEDRO PIEROTE</span><span id="photo-counter" aria-live="polite"></span></div><div class="lightbox-frame"><img id="lightbox-image" alt=""><p id="photo-status" role="status"></p></div><div class="lightbox-bottom"><p id="photo-caption"></p><div><button data-previous aria-label="Fotografia anterior">←</button><button data-next aria-label="Próxima fotografia">→</button></div></div></dialog>`;
+const ContactModal = ()=>`<dialog id="contact-modal" aria-labelledby="contact-title"><button class="close" data-close aria-label="Fechar formulário">×</button><p class="eyebrow">Vamos criar juntos</p><h2 id="contact-title">CONTE UM POUCO<br>SOBRE O PROJETO.</h2><p class="contact-note">Prepare sua mensagem e copie para conversar com Pedro pelo Instagram. Nenhum dado é enviado por este formulário.</p><form id="contact-form"><label>Nome<input name="nome" autocomplete="name" required maxlength="100" placeholder="Como você se chama?"></label><label>Tipo de projeto<select name="tipo" required><option value="">Selecione uma opção</option><option>Show</option><option>Evento</option><option>Conteúdo</option><option>Fotografia</option><option>Outro</option></select></label><label>Data aproximada<input name="data" type="date"></label><label>Cidade<input name="cidade" autocomplete="address-level2" maxlength="100" placeholder="Onde vai acontecer?"></label><label class="full">Mensagem<textarea name="mensagem" rows="3" maxlength="2500" required placeholder="Conte sua ideia, o que você imagina e o que precisa registrar."></textarea></label><button class="cta solid full" type="submit">Preparar mensagem <span aria-hidden="true">↗</span></button></form><div id="contact-result" hidden><label for="message-preview">Sua mensagem está pronta</label><textarea id="message-preview" rows="7" readonly></textarea><div class="result-actions"><button class="cta solid" id="copy-message">Copiar mensagem</button><a class="cta" id="send-message" href="${contactConfig.instagram}" target="_blank" rel="noopener noreferrer">Abrir Instagram ↗</a></div><p id="copy-status" role="status"></p></div></dialog>`;
+
+const C={Header,Hero,Manifesto,PortfolioGallery,HorizontalGallery,BehindTheScenes,CategoriesExperience,FilmStrip,About,MobileFilmmaking,ContactCTA,Footer,Lightbox,ContactModal};
+
+document.querySelector('#app').innerHTML=C.Header()+`<main>${C.Hero()+C.Manifesto()+C.PortfolioGallery()+C.HorizontalGallery()+C.BehindTheScenes()+C.CategoriesExperience()+C.FilmStrip()+C.About()+C.MobileFilmmaking()+C.ContactCTA()}</main>`+C.Footer()+C.Lightbox()+C.ContactModal();
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+const fine=matchMedia('(pointer: fine) and (hover: hover)');
+const dialogFocus=new WeakMap();
+function openDialog(dialog){if(dialog.open)return;dialogFocus.set(dialog,document.activeElement);dialog.showModal();document.body.classList.add('modal-open');}
+async function closeDialog(dialog){
+ if(!dialog.open||dialog.dataset.closing)return;
+ dialog.dataset.closing='true';
+ if(!reduced.matches){await dialog.animate([{opacity:1},{opacity:0}],{duration:140}).finished.catch(()=>{});}
+ dialog.close();delete dialog.dataset.closing;
+}
+$$('dialog').forEach(dialog=>{
+ dialog.addEventListener('close',()=>{document.body.classList.toggle('modal-open',!!$('dialog[open]'));dialogFocus.get(dialog)?.focus({preventScroll:true});});
+ dialog.addEventListener('cancel',e=>{e.preventDefault();closeDialog(dialog);});
+ dialog.querySelector('[data-close]').addEventListener('click',()=>closeDialog(dialog));
+ dialog.addEventListener('click',e=>{if(e.target===dialog && dialog.id!=='lightbox' && dialog.id!=='mobile-menu'){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDialog(dialog);}});
+});
+// Native modal dialogs provide focus containment and Escape handling.
+$$('[data-contact]').forEach(b=>b.addEventListener('click',()=>openDialog($('#contact-modal'))));
+const menu=$('#mobile-menu'),menuButton=$('.menu-toggle');
+menuButton.addEventListener('click',()=>{menuButton.setAttribute('aria-expanded','true');openDialog(menu);});
+menu.addEventListener('close',()=>menuButton.setAttribute('aria-expanded','false'));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>closeDialog(menu)));
+new ResizeObserver(()=>{if(innerWidth>700&&menu.open)closeDialog(menu);}).observe(document.documentElement);
+const sentinel=document.createElement('div');sentinel.style.cssText='position:absolute;top:40px;width:1px;height:1px;pointer-events:none';document.body.prepend(sentinel);
+new IntersectionObserver(([e])=>$('#header').classList.toggle('scrolled',!e.isIntersecting)).observe(sentinel);
+
+let activePhotos=portfolioData, photoIndex=0;
+let photoRequest=0;
+async function renderPhoto(){
+ const request=++photoRequest,p=activePhotos[photoIndex],img=$('#lightbox-image'),status=$('#photo-status');
+ img.style.opacity='0';status.textContent='Carregando fotografia…';
+ $('#photo-counter').textContent=`${String(photoIndex+1).padStart(2,'0')} / ${String(activePhotos.length).padStart(2,'0')}`;
+ $('#photo-caption').textContent=p.alt;
+ const loaded=new Image();loaded.src=p.image;
+ try{await loaded.decode();}catch{if(request===photoRequest)status.textContent='Não foi possível carregar a fotografia. Tente a próxima imagem.';return;}
+ if(request!==photoRequest)return;
+ img.src=p.image;img.alt=p.alt;img.style.opacity='1';status.textContent='';
+ if(!reduced.matches)img.animate([{opacity:0,transform:'scale(.99)'},{opacity:1,transform:'scale(1)'}],{duration:220});
+ if(activePhotos.length>1&&!navigator.connection?.saveData){const next=new Image();next.src=activePhotos[(photoIndex+1)%activePhotos.length].image;}
+}
+function showPhoto(id,collection=portfolioData){if(!collection.length)return;activePhotos=collection;photoIndex=Math.max(0,collection.findIndex(p=>p.id===id));renderPhoto();openDialog($('#lightbox'));}
+$('#lightbox').addEventListener('close',()=>{photoRequest++;});
+function nextPhoto(step){photoIndex=(photoIndex+step+activePhotos.length)%activePhotos.length;renderPhoto();}
+$$('[data-photo]').forEach(b=>b.addEventListener('click',()=>showPhoto(Number(b.dataset.photo))));
+$('[data-next]').addEventListener('click',()=>nextPhoto(1));$('[data-previous]').addEventListener('click',()=>nextPhoto(-1));
+$('#lightbox').addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();nextPhoto(1)}if(e.key==='ArrowLeft'){e.preventDefault();nextPhoto(-1)}});
+let touchX=0,touchY=0,swiping=false;
+$('.lightbox-frame').addEventListener('touchstart',e=>{swiping=e.touches.length===1;touchX=e.changedTouches[0].clientX;touchY=e.changedTouches[0].clientY;},{passive:true});
+$('.lightbox-frame').addEventListener('touchcancel',()=>{swiping=false;},{passive:true});
+$('.lightbox-frame').addEventListener('touchend',e=>{const x=e.changedTouches[0].clientX-touchX,y=e.changedTouches[0].clientY-touchY;if(swiping&&Math.abs(x)>55&&Math.abs(x)>Math.abs(y))nextPhoto(x<0?1:-1);swiping=false;},{passive:true});
+
+let categoryIndex=0;
+function selectCategory(index){categoryIndex=index;$$('[data-category]').forEach((b,i)=>{b.classList.toggle('active',i===index);b.setAttribute('aria-pressed',String(i===index));});$$('.category-image').forEach((im,i)=>im.classList.toggle('active',i===index));}
+$$('[data-category]').forEach(b=>{const choose=()=>selectCategory(Number(b.dataset.category));b.addEventListener('click',choose);b.addEventListener('focus',choose);b.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')choose();});});
+$('[data-explore]').addEventListener('click',()=>{const names=['Shows','Eventos','Conteúdo','Fotografia'],collection=portfolioData.filter(p=>p.category===names[categoryIndex]);showPhoto(collection[0].id,collection);});
+$('.motion-toggle').addEventListener('click',e=>{const paused=$('.filmstrip').classList.toggle('paused');e.currentTarget.setAttribute('aria-pressed',String(paused));e.currentTarget.textContent=paused?'Retomar movimento':'Pausar movimento';});
+
+const form=$('#contact-form');
+if(contactConfig.whatsapp){$('.contact-note').textContent='Prepare sua mensagem para enviar pelo WhatsApp. O envio só acontece quando você confirmar no WhatsApp.';}
+form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;$('#copy-status').textContent='';const d=new FormData(form);const date=d.get('data');const dateText=date?date.split('-').reverse().join('/'):'A combinar';const message=`Olá, Pedro! Meu nome é ${d.get('nome')}.\n\nProjeto: ${d.get('tipo')}\nData aproximada: ${dateText}\nCidade: ${d.get('cidade')||'A combinar'}\n\n${d.get('mensagem')}`;$('#message-preview').value=message;$('#contact-result').hidden=false;if(contactConfig.whatsapp){const number=contactConfig.whatsapp.replace(/\D/g,'');$('#send-message').href=`https://wa.me/${number}?text=${encodeURIComponent(message)}`;$('#send-message').textContent='Abrir WhatsApp ↗';}$('#message-preview').focus();$('#contact-result').scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'nearest'});});
+$('#copy-message').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#message-preview').value);$('#copy-status').textContent='Mensagem copiada. Cole na conversa com Pedro.';}catch{$('#message-preview').select();$('#copy-status').textContent='Selecione e copie a mensagem acima para levar à conversa.';}});
+
+// Reversible motion enhancement: content stays visible if scripts or observers fail.
+if(!reduced.matches){document.documentElement.classList.add('js-motion');const reveal=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');reveal.unobserve(e.target);}}),{threshold:.08});$$('.reveal').forEach(el=>reveal.observe(el));}
+reduced.addEventListener('change',()=>{if(reduced.matches)document.documentElement.classList.remove('js-motion');});
+const stage=$('.stage'),stageWindow=$('.stage-window');let stageVisible=false,heroVisible=true,raf=0,lastScroll=-1,manualUntil=0;
+new IntersectionObserver(([e])=>{stageVisible=e.isIntersecting;if(stageVisible)startMotion();}).observe(stage);
+new IntersectionObserver(([e])=>{heroVisible=e.isIntersecting;if(heroVisible)startMotion();}).observe($('.hero'));
+const stageStep=()=>$('.stage-photo').offsetWidth+parseFloat(getComputedStyle($('.stage-track')).gap);
+const manual=()=>{manualUntil=performance.now()+2400;};
+$$('[data-stage]').forEach(b=>b.addEventListener('click',()=>{manual();stageWindow.scrollBy({left:Number(b.dataset.stage)*(stageStep()),behavior:reduced.matches?'instant':'smooth'});}));
+stageWindow.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();manual();stageWindow.scrollBy({left:(e.key==='ArrowRight'?1:-1)*(stageStep()),behavior:reduced.matches?'instant':'smooth'});}});
+stageWindow.addEventListener('wheel',e=>{if(Math.abs(e.deltaX)>Math.abs(e.deltaY))manual();},{passive:true});
+stageWindow.addEventListener('touchstart',manual,{passive:true});
+function motionFrame(){raf=0;if(reduced.matches||document.hidden)return;const y=scrollY;if(y!==lastScroll){lastScroll=y;if(heroVisible&&innerWidth>700){const p=Math.min(1,y/$('.hero').offsetHeight);$('.hero-media').style.transform=`scale(${1+p*.045})`;$('.hero-copy').style.transform=`translateY(${p*30}px)`;}if(stageVisible&&innerWidth>700&&performance.now()>manualUntil){const rect=stage.getBoundingClientRect(),range=stage.offsetHeight-innerHeight;const p=range>0?Math.max(0,Math.min(1,-rect.top/range)):0;stageWindow.scrollLeft=p*(stageWindow.scrollWidth-stageWindow.clientWidth);}}}
+function startMotion(){if(!raf&&!reduced.matches)raf=requestAnimationFrame(motionFrame);}
+window.addEventListener('scroll',startMotion,{passive:true});
+window.addEventListener('resize',()=>{lastScroll=-1;if(innerWidth<=700){$('.hero-media').style.transform='';$('.hero-copy').style.transform='';}startMotion();},{passive:true});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)startMotion();});
+reduced.addEventListener('change',()=>{if(reduced.matches){$('.hero-media').style.transform='';$('.hero-copy').style.transform='';}else startMotion();});
+
+// The native pointer remains available; the decorative marker never captures input.
+const cursor=document.createElement('div');cursor.className='cursor';cursor.setAttribute('aria-hidden','true');cursor.hidden=true;document.body.append(cursor);
+document.addEventListener('pointermove',e=>{if(!fine.matches||reduced.matches||e.pointerType!=='mouse'){cursor.hidden=true;return;}cursor.hidden=!!$('dialog[open]');cursor.style.transform=`translate3d(${e.clientX}px,${e.clientY}px,0) translate(-50%,-50%)`;const image=e.target.closest('[data-photo]'),link=e.target.closest('a,button');cursor.classList.toggle('see',!!image);cursor.classList.toggle('link',!image&&!!link);cursor.textContent=image?'VER':'';},{passive:true});
+document.addEventListener('pointerleave',()=>cursor.hidden=true);
+$$('.cta').forEach(el=>{el.addEventListener('pointermove',e=>{if(!fine.matches||reduced.matches||e.pointerType!=='mouse')return;const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.035}px,${(e.clientY-r.top-r.height/2)*.06}px)`;});el.addEventListener('pointerleave',()=>el.style.transform='');});
+</script>
+</head>
+<body>
+  <a class="skip" href="#trabalhos">Pular para os trabalhos</a>
+  <div class="intro" aria-hidden="true"><strong>PEDRO PIEROTE</strong><span>FILMMAKER · FOTÓGRAFO</span><i></i></div>
+  <div id="app"></div>
+  <noscript><p class="no-script">Ative o JavaScript para explorar a galeria interativa. Encontre Pedro no <a href="https://www.instagram.com/p.pierote/">Instagram @p.pierote</a>.</p></noscript>
+</body>
+</html>
